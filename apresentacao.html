@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação em Slides - Karlus Idelgardes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Slides Overrides */
+        body, html {
+            overflow: hidden; /* Oculta a barra de rolagem principal */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: var(--bg-dark);
+        }
+
+        .slides-container {
+            display: flex;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .slides-container::-webkit-scrollbar {
+            display: none; /* Oculta barra para visual mais limpo */
+        }
+        
+        .slide {
+            flex: 0 0 100vw;
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: flex-start; /* Changed from center to prevent top cutoff */
+            justify-content: center;
+            position: relative;
+            overflow-y: auto; /* Permite rolar internamente caso o conteúdo seja grande */
+            padding-top: 80px; /* Increased to account for navbar */
+            padding-bottom: 80px; /* Added space for controls */
+        }
+
+        .slide > .container, .slide > .hero-content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        footer {
+            display: none; /* Sem rodapé nos slides */
+        }
+
+        /* Navbar reduzida para slides */
+        .navbar {
+            background: rgba(18, 18, 20, 0.9) !important;
+        }
+        
+        .btn-voltar {
+            background: transparent;
+            color: var(--text-main);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s;
+        }
+        
+        .btn-voltar:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        /* Controles dos slides */
+        .slide-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .slide-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            color: var(--text-main);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .slide-btn:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+            transform: scale(1.1);
+        }
+
+        /* Barra de progresso */
+        .slide-progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            background: var(--primary-green);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--glow-green);
+        }
+
+        /* Remover animacoes do scroll de style.css que podem conflitar */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        /* Ajuste do contato para os slides */
+        .contact-box {
+            margin-bottom: 80px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Karlus<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn-voltar">Encerrar Apresentação</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="slides-container" id="slides-container">
+        
+        <!-- Slide 1: Hero -->
+        <header class="slide">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Perito e Regulador <br>de <span class="highlight">Sinistros</span></h1>
+                    <h2>Karlus Idelgardes</h2>
+                    <p>Agregando mais precisão, segurança e padronização ao seu processo de regulação.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="./Imagens%20portifo/Karlus%20Image%2017%20de%20jun.%20de%20Regulador5.png" alt="Karlus Idelgardes - Foto">
+                        <div class="glow"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Slide 2: Sobre -->
+        <section class="slide">
+            <div class="container">
+                <h2 class="section-title">Quem sou <span>eu?</span></h2>
+                <div class="about-grid">
+                    <div class="about-text glass-card">
+                        <p>Profissional com sólida experiência em atividades operacionais, inspeções de campo, coordenação
+                            de equipes e atendimento ao público, acumulando mais de 7 anos de atuação em diferentes
+                            segmentos.</p>
+                        <p>Ao longo da minha trajetória, desenvolvi competências fundamentais como análise criteriosa,
+                            responsabilidade operacional, organização de processos, elaboração de registros técnicos e
+                            tomada de decisões baseada em evidências.</p>
+                        <p>Capacitado em Regulação de Sinistros Automotivos, combino experiência prática de campo com
+                            conhecimento técnico para realizar avaliações consistentes, imparciais e alinhadas às boas
+                            práticas do mercado segurador, contribuindo para processos mais seguros, transparentes e
+                            eficientes.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-box glass-card">
+                            <h3>7+</h3>
+                            <p>Anos de Experiência Profissional</p>
+                        </div>
+                        <div class="stat-box glass-card">
+                            <h3>100%</h3>
+                            <p>Foco em Decisões Seguras</p>
+                        </div>
+                        <div class="stat-box glass-card">
+                            <h3>Cília</h3>
+                            <p>Especialista no Sistema</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Habilidades -->
+        <section class="slide">
+            <div class="container">
+                <h2 class="section-title">Minhas <span>Habilidades</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Regulação de Sinistros</div>
+                    <div class="skill-tag">Compatibilidade de Danos</div>
+                    <div class="skill-tag">Análise Técnica de Evidências</div>
+                    <div class="skill-tag">Elaboração de Relatórios Técnicos</div>
+                    <div class="skill-tag">Registro Fotográfico Técnico</div>
+                    <div class="skill-tag">Elaboração de Orçamentos</div>
+                    <div class="skill-tag">Identificação de Inconsistências</div>
+                    <div class="skill-tag">Operação de Sistemas Digitais</div>
+                    <div class="skill-tag highlight-skill">Operação do sistema Cília</div>
+                    <div class="skill-tag">Detecção de Fraudes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Metodologia -->
+        <section class="slide">
+            <div class="container">
+                <h2 class="section-title">Metodologia de <span>Atuação</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item glass-card">
+                        <div class="step-number">01</div>
+                        <h3>Análise Inicial</h3>
+                        <ul>
+                            <li>Avaliação do relato do sinistro</li>
+                            <li>Verificação de coerência técnica preliminar</li>
+                            <li>Identificação de possíveis inconsistências</li>
+                            <li>Levantamento das informações do veículo e do evento</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass-card">
+                        <div class="step-number">02</div>
+                        <h3>Análise de Evidências</h3>
+                        <ul>
+                            <li>Avaliação técnica das imagens</li>
+                            <li>Identificação de danos primários e secundários</li>
+                            <li>Compatibilidade entre impacto e deformação</li>
+                            <li>Conferência documental e fotográfica</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass-card">
+                        <div class="step-number">03</div>
+                        <h3>Avaliação Técnica do Dano</h3>
+                        <ul>
+                            <li>Classificação dos danos (estrutural, mecânico ou estético)</li>
+                            <li>Análise de reparabilidade ou substituição</li>
+                            <li>Aplicação de critérios técnicos para orçamentação</li>
+                            <li>Avaliação da extensão dos danos</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass-card">
+                        <div class="step-number">04</div>
+                        <h3>Parecer Técnico</h3>
+                        <ul>
+                            <li>Elaboração de relatório objetivo</li>
+                            <li>Fundamentação técnica clara</li>
+                            <li>Linguagem padronizada e profissional</li>
+                            <li>Conclusão técnica consistente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Experiencias -->
+        <section class="slide">
+            <div class="container">
+                <h2 class="section-title">Minhas <span>Experiências</span></h2>
+                <div class="exp-grid">
+                    <div class="exp-card glass-card">
+                        <div class="exp-header">
+                            <h3>Encarregado de Poda / Motorista</h3>
+                            <span class="exp-time">6 anos</span>
+                        </div>
+                        <ul>
+                            <li>Coordenação de equipes em campo</li>
+                            <li>Planejamento e acompanhamento de atividades externas</li>
+                            <li>Transporte de equipes e equipamentos</li>
+                            <li>Controle operacional e cumprimento de procedimentos de segurança</li>
+                            <li>Elaboração de relatórios operacionais e acompanhamento de resultados</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-header">
+                            <h3>Eletricista</h3>
+                            <span class="exp-time">1 ano</span>
+                        </div>
+                        <ul>
+                            <li>Execução de atividades técnicas em campo</li>
+                            <li>Inspeção e avaliação de instalações</li>
+                            <li>Atendimento a normas de segurança</li>
+                            <li>Diagnóstico e solução de problemas operacionais</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card glass-card">
+                        <div class="exp-header">
+                            <h3>Auxiliar Odontológico</h3>
+                            <span class="exp-time">4 anos</span>
+                        </div>
+                        <ul>
+                            <li>Atendimento direto ao público</li>
+                            <li>Conferência e organização de documentos e registros</li>
+                            <li>Atenção aos detalhes e cumprimento de protocolos</li>
+                            <li>Elaboração e controle de informações administrativas</li>
+                            <li>Responsabilidade com informações sensíveis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Contato -->
+        <section class="slide">
+            <div class="container">
+                <div class="contact-box glass-card">
+                    <div class="contact-info">
+                        <h2>Vamos agregar mais precisão e segurança?</h2>
+                        <p>Decisões Seguras • Análise Estruturada • Confiabilidade nos Resultados</p>
+    
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </span>
+                                <a href="mailto:karlusidelgardes@gmail.com">karlusidelgardes@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                                </span>
+                                <a href="https://wa.me/5589999976157" target="_blank">(89) 99997-6157</a>
+                            </div>
+                            <div class="contact-item region-info">
+                                <span class="icon">📍</span>
+                                <div>
+                                    <p><strong>Região de Atuação:</strong> Picos – PI | Centro-Sul do Piauí</p>
+                                    <p><em>* Disponibilidade para deslocamentos em todo o estado e viagens
+                                            interestaduais</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="slide-controls">
+        <button class="slide-btn" id="prev-slide" aria-label="Slide anterior">←</button>
+        <button class="slide-btn" id="next-slide" aria-label="Próximo slide">→</button>
+    </div>
+    
+    <div class="slide-progress" id="slide-progress"></div>
+
+    <script>
+        const container = document.getElementById('slides-container');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+        const progressBar = document.getElementById('slide-progress');
+        
+        let currentSlideIndex = 0;
+
+        function updateProgress() {
+            const progress = (currentSlideIndex / (slides.length - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Controle de botões visuais
+            prevBtn.style.opacity = currentSlideIndex === 0 ? '0.3' : '1';
+            nextBtn.style.opacity = currentSlideIndex === slides.length - 1 ? '0.3' : '1';
+        }
+
+        function scrollToSlide(index) {
+            if (index >= 0 && index < slides.length) {
+                // Ao invés de scrollIntoView que as vezes tem bugs, ajustamos o scrollLeft direto do container
+                container.scrollTo({
+                    left: slides[index].offsetLeft,
+                    behavior: 'smooth'
+                });
+                currentSlideIndex = index;
+                updateProgress();
+            }
+        }
+
+        nextBtn.addEventListener('click', () => scrollToSlide(currentSlideIndex + 1));
+        prevBtn.addEventListener('click', () => scrollToSlide(currentSlideIndex - 1));
+
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                scrollToSlide(currentSlideIndex + 1);
+            }
+            if (e.key === 'ArrowLeft') {
+                scrollToSlide(currentSlideIndex - 1);
+            }
+        });
+
+        // Atualiza a barra e botoes quando rola manualmente ou pelo touch
+        container.addEventListener('scroll', () => {
+            // Calcula o slide atual baseado na posicao de scroll
+            const index = Math.round(container.scrollLeft / window.innerWidth);
+            if(index !== currentSlideIndex) {
+                currentSlideIndex = index;
+                updateProgress();
+            }
+        });
+        
+        updateProgress();
+    </script>
+</body>
+</html>
