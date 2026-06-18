@@ -25,7 +25,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e9ecef; /* Fundo cinza para dar destaque à folha A4 */
+            background-color: #e9ecef;
             display: flex;
             justify-content: center;
             padding: 40px 20px;
@@ -35,10 +35,10 @@
             font-family: 'Outfit', sans-serif;
         }
 
-        /* Formato Folha A4 */
         .a4-sheet {
             width: 210mm;
-            min-height: 297mm;
+            height: 297mm;
+            max-height: 297mm;
             background: #ffffff;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             display: flex;
@@ -46,22 +46,21 @@
             position: relative;
         }
 
-        /* Coluna da Esquerda (Sidebar) */
         .sidebar {
             width: 35%;
             background-color: var(--dark-green);
             color: var(--text-light);
-            padding: 40px 30px;
+            padding: 30px 25px;
             display: flex;
             flex-direction: column;
         }
 
         .profile-pic {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 4px solid var(--primary-green);
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
             overflow: hidden;
             background: #fff;
             display: flex;
@@ -77,26 +76,26 @@
         }
 
         .sidebar-section {
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
         .sidebar-title {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-bottom: 2px solid var(--primary-green);
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+            padding-bottom: 4px;
+            margin-bottom: 15px;
             color: var(--primary-green);
         }
 
         .contact-item {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            line-height: 1.4;
+            gap: 8px;
+            line-height: 1.3;
         }
 
         .contact-item strong {
@@ -112,8 +111,8 @@
         }
 
         .skill-list li {
-            font-size: 0.95rem;
-            margin-bottom: 12px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
             position: relative;
             padding-left: 15px;
         }
@@ -127,23 +126,22 @@
             font-size: 0.7rem;
         }
 
-        /* Coluna da Direita (Conteúdo Principal) */
         .main-content {
             width: 65%;
-            padding: 50px 40px;
+            padding: 30px 30px;
             background: var(--light-gray);
             color: var(--text-dark);
         }
 
         .header-name {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .header-name h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             line-height: 1.1;
             color: var(--dark);
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .header-name h1 span {
@@ -151,7 +149,7 @@
         }
 
         .header-name h2 {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             font-weight: 400;
             text-transform: uppercase;
@@ -159,13 +157,13 @@
         }
 
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             color: var(--dark-green);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -179,14 +177,14 @@
         }
 
         .text-body {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.88rem;
+            line-height: 1.5;
             color: #495057;
             text-align: justify;
         }
 
         .experience-item {
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
 
         .exp-header {
@@ -197,7 +195,7 @@
         }
 
         .exp-title {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--dark);
         }
@@ -217,9 +215,9 @@
         }
 
         .exp-details li {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #495057;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             padding-left: 15px;
             position: relative;
         }
@@ -235,12 +233,12 @@
         .methodology-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 10px;
         }
 
         .methodology-box {
             background: #fff;
-            padding: 15px;
+            padding: 10px 12px;
             border-radius: 8px;
             border-left: 4px solid var(--primary-green);
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -248,17 +246,16 @@
 
         .methodology-box h4 {
             color: var(--dark-green);
-            font-size: 1rem;
-            margin-bottom: 8px;
+            font-size: 0.88rem;
+            margin-bottom: 4px;
         }
 
         .methodology-box p {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             color: #6c757d;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        /* Botão Flutuante para Imprimir */
         .print-btn {
             position: fixed;
             top: 30px;
@@ -285,21 +282,41 @@
             transform: translateY(-2px);
         }
 
-        /* Ajustes de Impressão */
         @media print {
             body {
                 padding: 0;
+                margin: 0;
                 background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
             }
 
             .a4-sheet {
                 box-shadow: none;
                 width: 100%;
-                height: 100%;
+                height: 100vh;
+                max-height: none;
+                page-break-inside: avoid;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .methodology-box {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .exp-time {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
 
             .print-btn {
-                display: none;
+                display: none !important;
             }
 
             @page {
@@ -308,7 +325,6 @@
             }
         }
         
-        /* Ajustes Mobile para visualização no celular caso ele abra o link */
         @media (max-width: 768px) {
             .a4-sheet {
                 flex-direction: column;
@@ -329,7 +345,6 @@
     <button class="print-btn" onclick="window.print()">🖨️ Salvar como PDF</button>
 
     <div class="a4-sheet">
-        <!-- Coluna Esquerda -->
         <div class="sidebar">
             <div class="profile-pic">
                 <img src="./Imagens%20portifo/Karlus%20Image%2017%20de%20jun.%20de%20Regulador5.png" alt="Karlus Idelgardes">
@@ -383,10 +398,9 @@
             </div>
         </div>
 
-        <!-- Coluna Direita -->
         <div class="main-content">
             <div class="header-name">
-                <h1>Karlus<span>.</span></h1>
+                <h1>Karlus Idelgardes<span>.</span></h1>
                 <h2>Perito e Regulador de Sinistros</h2>
             </div>
 
@@ -436,23 +450,23 @@
 
                 <div class="experience-item">
                     <div class="exp-header">
-                        <span class="exp-title">Auxiliar Odontológico</span>
-                        <span class="exp-time">4 anos</span>
-                    </div>
-                    <ul class="exp-details">
-                        <li>Conferência documental e organização criteriosa de registros administrativos.</li>
-                        <li>Extrema atenção a detalhes e responsabilidade no trato de informações sensíveis.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="exp-header">
                         <span class="exp-title">Eletricista</span>
                         <span class="exp-time">1 ano</span>
                     </div>
                     <ul class="exp-details">
                         <li>Diagnóstico avançado e solução técnica de problemas operacionais em campo.</li>
                         <li>Inspeção de conformidade e avaliação baseada em normas de segurança.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Auxiliar Odontológico</span>
+                        <span class="exp-time">4 anos</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Conferência documental e organização criteriosa de registros administrativos.</li>
+                        <li>Extrema atenção a detalhes e responsabilidade no trato de informações sensíveis.</li>
                     </ul>
                 </div>
             </div>
